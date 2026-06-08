@@ -1,3 +1,4 @@
+# Task 6 - Templates Solution
 ---
 - name: Create server list
   hosts: database
