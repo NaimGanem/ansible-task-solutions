@@ -1,0 +1,12 @@
+---
+- name: Configure hourly cron job
+  hosts: proxy
+  become: true
+
+  tasks:
+    - name: Create cron job for root
+      cron:
+        name: "Append date to time.log"
+        user: root
+        minute: "0"
+        job: "date >> /var/log/time.log"
