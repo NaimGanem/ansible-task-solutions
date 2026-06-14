@@ -47,9 +47,21 @@ The role installs Apache, PHP, and mod_ssl, configures the firewall, deploys a t
 ---
 
 ## Task 4 - HAProxy Load Balancer
+### Role Installation
 
+The HAProxy role was installed from Ansible Galaxy using:
+
+```bash
+sudo ansible-galaxy role install geerlingguy.haproxy -p /home/automation/plays/roles
+```
 ### Goal
 Configure HAProxy using an Ansible Galaxy role.
+
+### Role Installation
+
+```bash
+sudo ansible-galaxy role install geerlingguy.haproxy -p /home/automation/plays/roles
+```
 
 ### Solution
 The playbook installs and configures HAProxy to distribute HTTP requests between web servers using the round-robin load-balancing method.
@@ -87,6 +99,24 @@ The playbook creates `/etc/server_list.txt` dynamically from inventory data and 
 - Jinja2 Templates
 - File Management
 - SELinux
+
+---
+
+## Ansible Vault
+
+Sensitive data such as the sudo/become password is stored using Ansible Vault.
+
+Encrypted variables are located in:
+
+```text
+plays/group_vars/all/vault.yml
+```
+
+Playbooks can be executed with:
+
+```bash
+ansible-playbook <playbook>.yml --ask-vault-pass
+```
 
 ---
 

@@ -1,0 +1,7 @@
+---
+- name: Configure Apache
+  hosts: webservers
+  become: true
+
+  roles:
+    - sample-apache
