@@ -1,8 +1,0 @@
-# Task 3 - Apache Role Solution
----
-- name: Configure Apache
-  hosts: webservers
-  become: true
-
-  roles:
-    - sample-apache
